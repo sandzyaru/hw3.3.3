@@ -38,9 +38,9 @@ public class ThirdFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment fragmentFourth = new FourthFragment();
-                fragmentFourth.setArguments(chemodan);
                 chemodan.putString("key2",name.getText().toString());
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container2,fragmentFourth).
+                fragmentFourth.setArguments(chemodan);
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,fragmentFourth).
                         addToBackStack("").commit();
             }
         });

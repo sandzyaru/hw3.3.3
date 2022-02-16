@@ -40,7 +40,7 @@ public class SecondFragment extends Fragment {
                 Fragment fragmentThird = new ThirdFragment();
                 fragmentThird.setArguments(chemodan);
                 chemodan.putString("key1",name.getText().toString());
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container1,fragmentThird).
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,fragmentThird).
                         addToBackStack("").commit();
             }
         });
