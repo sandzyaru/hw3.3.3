@@ -15,7 +15,7 @@ import android.widget.EditText;
 
 public class FirstFragment extends Fragment {
     private Button btnNextFragment;
-    EditText editText;
+   private EditText editText;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,12 +29,12 @@ public class FirstFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         btnNextFragment=view.findViewById(R.id.next_fragment);
         editText=view.findViewById(R.id.edit_text);
-        Bundle chemodan = new Bundle();
-        chemodan.putString("key",editText.getText().toString());
-        Fragment fragmentSecond = new SecondFragment();
         btnNextFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle chemodan = new Bundle();
+                chemodan.putString("key",editText.getText().toString());
+                Fragment fragmentSecond = new SecondFragment();
                 fragmentSecond.setArguments(chemodan);
                 requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,fragmentSecond).
                         addToBackStack("").commit();
